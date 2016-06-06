@@ -1,0 +1,87 @@
+<?php
+ /*****************************************************************************
+ ******************************************************************************
+ ************************************ Mail Sender *****************************
+ *                                                                            *
+ *                              Developed By Lil'Essam                        *
+ *                                                                            *
+ *****************************************************************************/
+?>
+<!-- TinyMCE Including -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<!-- Setting all textareas to use NicEdit -->
+<script>tinymce.init({ selector:'textarea' });</script>
+<!-- End NicEdit Including -->
+<div class="container">
+    <div class="row">
+      <!-- Start callout -->
+      <div class="callout fade in callout-warning no-icon no-subheader">
+            <div class="header">
+                <h3><?php echo Lang::get('lilessam.mailsender::lang.callout.title'); ?></h3>
+            </div>
+            <div class="content">
+                <p><?php echo Lang::get('lilessam.mailsender::lang.callout.body'); ?></p>
+            </div>
+        </div>
+        <!-- End callout -->
+
+        <!-- Start form -->
+        <form data-request="onSendMail">
+
+            <!-- Selecting a group -->
+            <div class="form-group">
+                <!-- Label for group -->
+                <label for="group"><?php echo Lang::get('lilessam.mailsender::lang.controller.groups'); ?></label>
+                <!-- End Label for group -->
+
+                <!-- Selecting -->
+                <select class="form-control" name="group">
+                     <?php
+                        foreach ($groups as $group)
+                        {
+                        ?>
+                            <option value="<?= $group->id ?>"><?= $group->name ?></option>
+                        <?php
+                        }
+                        ?>
+                </select>
+                <!-- End Selecting -->
+            </div>
+            <!-- End of Selecting a group -->
+
+            <!-- Message Subject -->
+            <div class="form-group">
+                <!-- Label for subject -->
+                <label for="subject"><?php echo Lang::get('lilessam.mailsender::lang.controller.subject'); ?></label>
+                <!-- End label -->
+
+                <!-- Start subject field -->
+                <input type="text" name="subject" class="form-control" placeholder="<?php echo Lang::get('lilessam.mailsender::lang.controller.typesubject'); ?>"/>
+                <!-- End subject field -->
+            </div>
+            <!-- End Message Subject -->
+
+            <!-- Typing the message -->
+            <div class="form-group">
+                <!-- Label for message -->
+                <label for="message"><?php echo Lang::get('lilessam.mailsender::lang.controller.message'); ?></label>
+                <!-- End label for message -->
+
+                <!-- Start rich editor for message -->
+                <textarea name="message" class="form-control" placeholder="<?php echo Lang::get('lilessam.mailsender::lang.controller.type'); ?>">
+                </textarea>
+                <!-- End rich editor for message -->
+            </div>
+            <!-- End Typing the message -->
+
+            <!-- Sending Button -->
+            <div class="form-group pull-right">
+                <button class="btn btn-primary" type="submit"><?php echo Lang::get('lilessam.mailsender::lang.controller.submit'); ?></button>
+            </div>
+            <!-- End Sengin Button -->
+
+        </form>
+        <!-- End form -->
+
+    </div>
+</div>
