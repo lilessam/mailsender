@@ -18,8 +18,8 @@ return [
     'users'     => ' users',
     'nousers'   => 'There\'s no users in this group',
     'callout'   => [
-      'title'   => 'Backend users mail sender',
-      'body'    => 'This plugin allows you to send a mail to a specific backend group',
+        'title'   => 'Backend users mail sender',
+        'body'    => 'This plugin allows you to send a mail to a specific backend group',
         ],
     'test' => [
         'text'              => 'You can send a test mail through this form',
