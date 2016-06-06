@@ -11,10 +11,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Backend Users Mail Sender',
-            'description' => 'Provides a control for sending mails to specific backend members group',
-            'author' => 'LilEssam',
-            'icon' => 'icon-twitch'
+            'name'          => 'Backend Users Mail Sender',
+            'description'   => 'Provides a control for sending mails to specific backend members group',
+            'author'        => 'LilEssam',
+            'icon'          => 'icon-twitch'
         ];
     }
 
@@ -26,8 +26,8 @@ class Plugin extends PluginBase
     {
         return [
             'lilessam.mailsender.access' => [
-                'label' => 'Access to backend mail sender plugin',
-                'tab' => 'Mail Sender'
+                'label'     => 'Access to backend mail sender plugin',
+                'tab'       => 'Mail Sender'
             ],
         ];
     }
