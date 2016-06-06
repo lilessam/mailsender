@@ -75,13 +75,34 @@
             <!-- End Typing the message -->
 
             <!-- Sending Button -->
-            <div class="form-group pull-right">
+            <div class="form-group pull-right" id="sendAll">
                 <button class="btn btn-primary" type="submit"><?php echo Lang::get('lilessam.mailsender::lang.controller.submit'); ?></button>
             </div>
             <!-- End Sengin Button -->
-
-        </form>
-        <!-- End form -->
-
+            <br>
+            <!-- HR -->
+            <hr>
+            
+            <!-- Start Send Test Mail form -->
+                    <h4><?php echo Lang::get('lilessam.mailsender::lang.test.text'); ?></h4>
+                            <!-- Test email -->
+                            <div class="form-group">
+                                <!-- test email label -->
+                                <label for="email"><?= Lang::get('lilessam.mailsender::lang.test.email') ?></label>
+                                <!-- end test email label -->
+                                <input type="text" class="form-control" name="testEmail" 
+                                    data-request="onCheckTestEmail"
+						        	data-request-success="if( data.correct == 1) { $('#sendAll').hide() }else{$('#sendAll').show() }"
+						        	data-track-input
+						            id="testEmail"
+                                placeholder="<?= Lang::get('lilessam.mailsender::lang.test.email_placeholder') ?>">
+                            </div>
+                            <!-- End test mail -->
+                      <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-primary"><?= Lang::get('lilessam.mailsender::lang.test.send_mail') ?></button>
+                      </div>
+            <!-- End Send Test Mail form -->
+            </form>
+            <!-- End form -->
     </div>
 </div>
