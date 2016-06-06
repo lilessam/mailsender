@@ -21,4 +21,12 @@ return [
       'title' => 'Backend kullanıcılara mesaj gönderen',
       'body' => 'Bu eklenti bir gruba mesaj göndermek için yapar',
     ],
+    'test' => [
+        'text'              => 'Bu form aracılığıyla bir test posta gönderebilirsiniz',
+        'email'             => 'E-postanızı burada yazın',
+        'send_mail'         => 'Testi E-posta gönder',
+        'email_placeholder' => 'email@email.com',
+        'sent'              => 'Mesaj başarıyla gönderildi',
+        ],
+    'error_nodata' => 'Tüm alanlar zorunludur',
   ];
