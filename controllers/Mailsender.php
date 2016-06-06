@@ -62,10 +62,20 @@ class Mailsender extends Controller
         $group_id = post('group');
         $subject = post('subject');
         $msg = post('message');
+        $test_email = post('testEmail');
+        
+        /**
+         * Checking if there's no data
+         * */
+        if($subject == "" || $msg == ""):
+            Flash::warning(Lang::get('lilessam.mailsender::lang.error_nodata'));
+        endif;
+        
         /**
          * Striping tags for the plain version of mail
          * */
-        $msgPlain = strip_tags($msg);
+        $msgPlain = strip_tags(post('message'));
+        
         /**
          * Setting vars array for mail template
          * */
@@ -74,6 +84,35 @@ class Mailsender extends Controller
             'msg' => $msg,
             'msgPlain' => $msgPlain,
             ];
+            
+        /**
+         * Check if the administrator want to send only a test message
+         * */
+        if($test_email != "")
+        {
+            //email and subject array
+            $array = [
+            'email' => $test_email,
+            'subject'=>$subject
+            ];
+            //Sending mail
+            Mail::send([
+                        'text' => $msgPlain,
+                        'html' => $msg,
+                        'raw' => true
+                    ], $vars, function($message) use ($array){
+            $message->subject($array['subject']);
+		    $message->to($array['email'], "Test Reciever");
+	    	});
+	    	
+	    	/**
+	    	 * Success message
+	    	 * */
+	    	return Flash::success(Lang::get('lilessam.mailsender::lang.test.sent'));
+        }
+            
+        
+        
         /**
          * Getting users count in this group
          * */
@@ -118,5 +157,18 @@ class Mailsender extends Controller
             Flash::warning(Lang::get('lilessam.mailsender::lang.nousers'));
         endif;
 
+    }
+    
+    /**
+     * This function checks if there's a value in test email field.
+     * if there's any value the send button to all groups will be hidden
+     * */
+    public function onCheckTestEmail()
+    {
+        if(post('testEmail') == ""){
+		    return  ['correct'=> 0];
+    	}else{
+    		return  ['correct'=> 1];
+    	}
     }
 }
