@@ -13,7 +13,7 @@ Plugin can be used for sending mails to any of backend user groups.
 * ar - العربية
 
 ###Installation
-1. Create a folder named lilessam in your __root/plugins folder.
+1. Create a folder named lilessam in your __root/plugins__ folder.
 1. Upload folder __mailsender__ to __lilesssam__ folder.
 1. Login into your backend control panel > __Mail Sender__.
 
