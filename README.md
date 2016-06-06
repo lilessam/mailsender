@@ -1,7 +1,7 @@
 ##Backend groups mail sender plugin for OctoberCMS
 Plugin can be used for sending mails to any of backend user groups.
 
-The plugin sends your mail to all backend users who are in the group you select.
+####The plugin sends your mail to all backend users who are in the group you select.
 
 ###Main features
 * Sending plain mails.
@@ -23,3 +23,6 @@ The plugin sends your mail to all backend users who are in the group you select.
 1. Go to the __Settings__ page in Backend.
 1. Click on the __Administrators__ link from sidebar.
 1. Click on __Manage Groups__ to modify your backend users groups.
+
+###Screenshot
+![Image of MailSender](http://i.imgur.com/Imrwzhb.png)
