@@ -1,11 +1,13 @@
 ##Backend groups mail sender plugin for OctoberCMS
 Plugin can be used for sending mails to any of backend user groups.
+
 The plugin sends your mail to all backend users who are in the group you select.
 
 ###Main features
-* Sending plain mails
-* Sending HTML mails
-* Advanced editor
+* Sending plain mails.
+* Sending HTML mails.
+* Advanced editor.
+* Ability to send test mails.
 
 ###Available languages
 * en - English
@@ -15,7 +17,7 @@ The plugin sends your mail to all backend users who are in the group you select.
 ###Installation
 1. Create a folder named lilessam in your __root/plugins__ folder.
 1. Upload folder __mailsender__ to __lilesssam__ folder.
-1. Login into your backend control panel > __Mail Sender__.
+1. Login into your backend control panel __>__ __Mail Sender__.
 
 ###Modify backend user groups
 1. Go to the __Settings__ page in Backend.
