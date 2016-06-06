@@ -68,7 +68,7 @@ class Mailsender extends Controller
          * Checking if there's no data
          * */
         if($subject == "" || $msg == ""):
-            Flash::warning(Lang::get('lilessam.mailsender::lang.error_nodata'));
+            return Flash::warning(Lang::get('lilessam.mailsender::lang.error_nodata'));
         endif;
         
         /**
@@ -101,8 +101,8 @@ class Mailsender extends Controller
                         'html' => $msg,
                         'raw' => true
                     ], $vars, function($message) use ($array){
-            $message->subject($array['subject']);
-		    $message->to($array['email'], "Test Reciever");
+            		$message->subject($array['subject']);
+		    	$message->to($array['email'], "Test Reciever");
 	    	});
 	    	
 	    	/**
@@ -142,8 +142,8 @@ class Mailsender extends Controller
                                 'html' => $msg,
                                 'raw' => true
                             ], $vars, function($message) use ($array){
-                    $message->subject($array['subject']);
-        		    $message->to($array['user']->email, $array['user']->login);
+                    		$message->subject($array['subject']);
+        		    	$message->to($array['user']->email, $array['user']->login);
         	    	});
                 }
             /**
@@ -161,12 +161,12 @@ class Mailsender extends Controller
     
     /**
      * This function checks if there's a value in test email field.
-     * if there's any value the send button to all groups will be hidden
+     * if there's any value the send button to all group will be hidden
      * */
     public function onCheckTestEmail()
     {
         if(post('testEmail') == ""){
-		    return  ['correct'=> 0];
+		return  ['correct'=> 0];
     	}else{
     		return  ['correct'=> 1];
     	}
