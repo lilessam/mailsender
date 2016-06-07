@@ -1,4 +1,4 @@
-##Backend groups mail sender plugin for OctoberCMS
+##Backend groups mail sender plugin for Laravel 5.2/OctoberCMS
 Plugin can be used for sending mails to any of backend user groups.
 
 ####The plugin sends your mail to all backend users who are in the group you select.
