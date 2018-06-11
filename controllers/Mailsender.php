@@ -122,15 +122,15 @@ class Mailsender extends Controller
          * Checking if there's users in the group
          * */
             if($users_count != 0):
-                //Fetching users
-                $users_ids = DB::table('backend_users_groups')->where('user_group_id', $group_id)->get();
+                //Fetching users ids
+                $users_ids = DB::table('backend_users_groups')->where('user_group_id', $group_id)->pluck('id');
 
                 /**
                  * Looping to send mail to every user
                  * */
-                foreach($users_ids as $user_id){
-                    //The user
-                    $user = User::where('id', $user_id->user_id)->first();
+                $users = User::whereIn('id', $users_ids)->get();
+
+                foreach($users as $user){
                     //User and subject array
                     $array = [
                     'user' => $user,
